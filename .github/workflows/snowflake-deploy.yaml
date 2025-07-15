@@ -36,5 +36,20 @@ jobs:
           echo "Step 1: Installing schemachange"
           pip install schemachange
 
+          echo "Verifying version..."
+          schemachange --version
+
           echo "Step 2: Running schemachange"
           schemachange -f $GITHUB_WORKSPACE/EMP/PRIVATE -a $SF_ACCOUNT -u $SF_USERNAME -p $SF_PASSWORD -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+
+          schemachange \
+          --file-path "$GITHUB_WORKSPACE/EMP/PRIVATE" \
+          --snowflake-account "$SF_ACCOUNT" \
+          --snowflake-user "$SF_USERNAME" \
+          --snowflake-password "$SF_PASSWORD" \
+          --snowflake-role "$SF_ROLE" \
+          --snowflake-warehouse "$SF_WAREHOUSE" \
+          --snowflake-database "$SF_DATABASE" \
+          --snowflake-schema "SCHEMACHANGE" \
+          --change-history-table "$SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY" \
+          --create-change-history-table
