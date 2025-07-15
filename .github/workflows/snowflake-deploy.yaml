@@ -31,10 +31,10 @@ jobs:
           SF_DATABASE: ${{ secrets.SF_DATABASE }}
         run: |
           echo "Installing schemachange..."
-          pip install --upgrade schemachange
+          pip install schemachange
 
           echo "Verifying version..."
-          schemachange --version
+          pip show schemachange
 
           echo "Running schemachange..."
           schemachange \
