@@ -38,7 +38,7 @@ jobs:
 
           echo "Step 2: Running schemachange"
           schemachange \
-            --file-path "$GITHUB_WORKSPACE/EMP/PRIVATE" \
+            --f "$GITHUB_WORKSPACE/EMP/PRIVATE" \
             --snowflake-account "$SF_ACCOUNT" \
             --snowflake-user "$SF_USERNAME" \
             --snowflake-password "$SF_PASSWORD" \
