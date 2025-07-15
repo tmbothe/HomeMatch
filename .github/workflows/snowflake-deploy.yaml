@@ -1,13 +1,4 @@
 name: snowflake-deploy
-#Controls when the workflow will run
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'EMP/PRIVATE/**'
-      
-  workflow_dispatch:name: snowflake-deploy
 
 #Controls when the workflow will run
 on:
