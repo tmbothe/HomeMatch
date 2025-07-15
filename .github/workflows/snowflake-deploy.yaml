@@ -31,7 +31,7 @@ jobs:
           SF_DATABASE: ${{ secrets.SF_DATABASE }}
         run: |
           echo "Installing schemachange..."
-          pip install schemachange
+          pip install --upgrade "schemachange>=3.4.0"
 
           echo "Verifying version..."
           pip show schemachange
