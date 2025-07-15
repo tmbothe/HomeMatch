@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'EMP/PRIVATE/**'
+      - 'EMP/**'
   workflow_dispatch:
 
 jobs:
@@ -36,9 +36,12 @@ jobs:
           echo "Verifying version..."
           pip show schemachange
 
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          python --version
+
           echo "Running schemachange..."
           schemachange \
-            --file-path "$GITHUB_WORKSPACE/EMP/PRIVATE" \
+            --file-path "$GITHUB_WORKSPACE/EMP" \
             --snowflake-account "$SF_ACCOUNT" \
             --snowflake-user "$SF_USERNAME" \
             --snowflake-password "$SF_PASSWORD" \
