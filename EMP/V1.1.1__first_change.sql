@@ -1,3 +1,30 @@
+-- Create Schemas required
+CREATE SCHEMA IF NOT EXISTS EMP.hrdata;
+
+-- Create Tables
+CREATE TABLE IF NOT EXISTS hrdata.employees
+   ( employee_id NUMBER(6)
+   , first_name VARCHAR(20)
+   , last_name VARCHAR(25) NOT NULL
+   , email VARCHAR(25) NOT NULL
+   , phone_number VARCHAR(20)
+   , hire_date DATE NOT NULL
+   , job_id VARCHAR(10) NOT NULL
+   , salary NUMBER(8,2)
+   , commission_pct NUMBER(2,2)
+   , manager_id NUMBER(6)
+   , dept_id NUMBER(4)
+   , PRIMARY KEY (employee_id)
+   ) ; 
+
+CREATE TABLE IF NOT EXISTS hrdata.departments
+   ( dept_id NUMBER(4)
+   , department_name VARCHAR(30) NOT NULL
+   , manager_id NUMBER(6)
+   , location_id NUMBER(4)
+   ,PRIMARY KEY (dept_id)
+   ) ;
+
 -- Insert data into tables
 INSERT INTO hrdata.employees VALUES 
    ( 100,  'Ramana',  'Rao',  'RRAO',  '420.271.4567',  TO_DATE('17-JUN-1987', 'dd-MON-yyyy'),  'ADM_PRES',  24000,  NULL,  NULL,  90),
@@ -23,4 +50,3 @@ INSERT INTO hrdata.departments VALUES
    ( 80 , 'Sales', 145, 2500),
    ( 90 , 'Executive', 100, 1700),
     ( 100 , 'Finance', 108, 1700) ;
-	
