@@ -36,6 +36,9 @@ jobs:
           echo "Verifying version..."
           pip show schemachange
 
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          python --version
+
           echo "Running schemachange..."
           schemachange \
             --file-path "$GITHUB_WORKSPACE/EMP" \
