@@ -31,7 +31,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Deploy Snowpark apps
-        working-directory: HomeMatch
+        working-directory: first_snowpark_project
 
         env:
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE" 
@@ -41,7 +41,7 @@ jobs:
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE_DEV }}
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE_DEV }}
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE_DEV }}
-        run: python deploy_snowpark_app.py $GITHUB_WORKSPACE/HomeMatch
+        run: python deploy_snowpark_app.py $GITHUB_WORKSPACE/first_snowpark_project
 
       
       - name: Deploy Snowpark tasks
