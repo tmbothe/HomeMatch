@@ -1,0 +1,16 @@
+
+default_connection_name="trail"
+
+[cli.logs]
+save_logs = true
+path = "/home/codespace/.config/snowflake/logs" 
+level = "info"
+
+[connections.trail]
+account="VVXDFYA-MYC14594" 
+user="UKO" 
+password="Gambrills@2025"
+warehouse="COMPUTE_WH"
+database="EMP"
+schema="PUBLIC"
+role="ACCOUNTADMIN"
